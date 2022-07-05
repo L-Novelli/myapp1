@@ -1,5 +1,6 @@
 import { Button, FlatList, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
+import { ImageBackground } from 'react-native-web';
 import {useState} from 'react';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
   const [itemList, setItemList] = useState([]); //useState de array
   const [modalVisible, setModalVisible] = useState(false);
   const [itemSelected, setItemSelected] = useState({});
+  const image = require('./assets/wallpaper.jpg');
 
   const onHandlerChangeItem = (text) => setTextItem(text);
   const onHandlerAddItem = () => { 
@@ -28,6 +30,7 @@ export default function App() {
 
 return (
     <View style={styles.screen}>
+      <ImageBackground source = {image} resizeMode = "cover" style = {styles.image}>
       <Modal
         animationType = "slide"
         transparent = {true}
@@ -71,6 +74,7 @@ return (
           showsVerticalScrollIndicator =  {false}
           keyExtractor = {item => item.id}
       />
+//      </ImageBackground>
     </View>     
   );
 }
