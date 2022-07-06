@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   screen: {
     marginTop: '10%',
     padding: 30,
-    backgroundColor: 'green'
+    ImageBackgroun: (/assets/wallpaper.jpg)
   },
   container: {
     alignItems: 'center',
