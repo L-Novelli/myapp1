@@ -3,7 +3,9 @@ import { Button, FlatList, ImageBackground, Modal, StyleSheet, Text, TextInput, 
 import React from 'react';
 import {useState} from 'react';
 
-const image = { uri: "https://i.pinimg.com/originals/87/60/50/8760508c95364b7405978967d5936377.jpg" };
+//const image = { uri: "https://i.pinimg.com/originals/87/60/50/8760508c95364b7405978967d5936377.jpg" };
+const image = require('./assets/wallpaper.jpg')
+
 
 export default function App() {
 
