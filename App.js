@@ -1,7 +1,9 @@
-import { Button, FlatList, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Button, FlatList, ImageBackground, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-import { ImageBackground } from 'react-native-web';
+import React from 'react';
 import {useState} from 'react';
+
+const image = { uri: "https://i.pinimg.com/originals/87/60/50/8760508c95364b7405978967d5936377.jpg" };
 
 export default function App() {
 
@@ -9,8 +11,6 @@ export default function App() {
   const [itemList, setItemList] = useState([]); //useState de array
   const [modalVisible, setModalVisible] = useState(false);
   const [itemSelected, setItemSelected] = useState({});
-  const image = require('./assets/wallpaper.jpg');
-
   const onHandlerChangeItem = (text) => setTextItem(text);
   const onHandlerAddItem = () => { 
     setItemList(currentItems => [...currentItems, { id: Date.now(), value: textItem}])
@@ -29,8 +29,12 @@ export default function App() {
   }
 
 return (
-    <View style={styles.screen}>
-      <ImageBackground source = {image} resizeMode = "cover" style = {styles.image}>
+    <ImageBackground  source={image} 
+                        resizeMode="cover" 
+                        style={styles.image}
+                        >
+        <View style={styles.screen}>
+      
       <Modal
         animationType = "slide"
         transparent = {true}
@@ -74,8 +78,9 @@ return (
           showsVerticalScrollIndicator =  {false}
           keyExtractor = {item => item.id}
       />
-//      </ImageBackground>
-    </View>     
+    
+    </View>  
+  </ImageBackground>  
   );
 }
         
@@ -83,18 +88,19 @@ const styles = StyleSheet.create({
   screen: {
     marginTop: '10%',
     padding: 30,
-    ImageBackgroun: (/assets/wallpaper.jpg)
   },
   container: {
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    backgroundColor: 'green' 
+  },
+  image:{
+    justifyContent: "center",
   },
   input: {
     width: '80%',
     height: 50,
-    borderColor: 'purple',
+    borderColor: 'black',
     borderWidth: 2,
   },
   item: {
