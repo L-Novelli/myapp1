@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/welcome_back.jpg",
+      "image": "./assets/loading.jpg",
       "resizeMode": "contain",
       "height": "100%"
     },
