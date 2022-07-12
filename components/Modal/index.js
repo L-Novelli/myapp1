@@ -6,30 +6,32 @@ export default function CustomModal(props) {
 
     return (
         <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-        >
-            <View style={styles.modal}>
-                <View style={styles.modalView}>
-                    <View style={styles.modalTitle}>
-                        <Text>
-                            Mi modal
-                        </Text>
-                    </View>
-                    <View style={styles.modalMessage}>
-                        <Text>Estas seguro que desea borrar ?</Text>
-                    </View>
-                    <View style={styles.modalMessage}>
-                        <Text style={styles.modalItem}>{itemSelected.value}</Text>
-                    </View>
-                    <View style={styles.modalButton}>
-                        <Button onPress={() => onHandlerDeleteItem(itemSelected.id)} title='Confirmar' />
-                        <Button onPress={() => onHandlerCompleteItem(itemSelected.id)} title='Completar' />
-                    </View>
-                </View>
-            </View>
-        </Modal>
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+      >
+      <View style={styles.modal}>
+         <View style={styles.modalView}>
+            <View style={styles.modalTitle}>
+                 <Text>
+                   My Modal.
+                  </Text>
+                  </View>
+                  <View style={styles.modalMessage}>
+                      <Text>Select an action:</Text>
+                  </View>
+                  <View style={styles.modalMessage}>
+                      <Text style={styles.modalItem}>{itemSelected.value}</Text>
+                  </View>
+                  <View style={styles.modalButton}>
+                      <Button onPress={() => onHandlerDeleteItem(itemSelected.id)} title='Delete.' />
+                      <Button onPress={() => onHandlerCompleteItem(itemSelected.id)} title='Completed.' />
+                      <Button onPress={() => onHandlerUnompleteItem(itemSelected.id)} title='Uncompleted' />
+                      <Button onPress={() => onHandlerExit(itemSelected.id)} title='Exit Menu.' />
+                  </View>
+              </View>
+          </View>
+      </Modal>
     )
 }
 

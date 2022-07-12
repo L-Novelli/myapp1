@@ -3,7 +3,9 @@ import {useEffect, useState} from 'react';
 
 import AddItem from './components/AddITem';
 import CustomModal from './components/Modal';
+import Header from './components/Header'
 import List from './components/itemList';
+import { StatusBar } from 'expo-status-bar';
 
 const image = { uri: "https://i.pinimg.com/originals/87/60/50/8760508c95364b7405978967d5936377.jpg" };
 
@@ -37,6 +39,13 @@ export default function App() {
     setItemList({...itemList})
     setModalVisible(!modalVisible)
     console.table(itemList)
+  }
+
+  const onHandlerUnompleteItem = id => {
+    let itemCompleted = itemList.findIndex((item) => item.id === id)
+    itemList[itemCompleted].completed = false
+    setItemList([...itemList])
+    setModalVisible(!modalVisible)
   }
 
 return (
